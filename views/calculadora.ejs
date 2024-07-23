@@ -1,0 +1,60 @@
+<!-- views/calculadora.ejs -->
+
+  <%- include("encabezado") %>
+  
+  <!-- navbar -->
+  <%- include("navbar") %>
+   <!-- navbar -->
+  <div class="container">
+      <!--Cuadro para ingresar datos --> 
+      <form id="calculator">
+          <label for="shape"><h1>Selecciona una figura:</h1></label>
+          <select id="shape" name="shape" onchange="showFields()">
+              <option value="square">Cuadrado</option>
+              <option value="rectangle">Rectángulo</option>
+              <option value="triangle">Triángulo</option>
+              <option value="circle">Círculo</option>
+          </select>
+          <div id="squareFields" class="fields active">
+              <label for="squareSide">Lado:</label>
+              <input type="number" id="squareSide" name="squareSide" required>
+          </div>
+          <div id="rectangleFields" class="fields">
+              <label for="rectangleLength">Longitud:</label>
+              <input type="number" id="rectangleLength" name="rectangleLength" required>
+              <label for="rectangleWidth">Ancho:</label>
+              <input type="number" id="rectangleWidth" name="rectangleWidth" required>
+          </div>
+          <div id="triangleFields" class="fields">
+              <label for="triangleLado1">Lado 1:</label>
+              <input type="number" id="triangleLado1" name="triangleLado1" required>
+              <label for="triangleLado2">Lado 2:</label>
+              <input type="number" id="triangleLado2" name="triangleLado2" required>
+              <label for="triangleLado3">Lado 3:</label>
+              <input type="number" id="triangleLado3" name="triangleLado3" required>
+          </div>
+          <div id="circleFields" class="fields">
+              <label for="circleRadius">Radio:</label>
+              <input type="number" id="circleRadius" name="circleRadius" required>
+          </div>
+          <button type="button" onclick="calculate()">Calcular</button>
+      </form>
+  </div>
+
+  <!--Cuadro de resultados -->
+  <div class="content-center">
+    <div class="result">
+      <label for="label"><h1>Resultados:</h1></label>
+      
+      <p>Área: <span id="areaResult"></span></p>
+      <p>Perímetro: <span id="perimeterResult"></span></p>
+    </div>
+  </div>
+
+  <!--Pie -->
+  <%- include("pie") %>
+  <!--Pie-->
+
+  <script src="/public/js/script.js"></script>
+</body>
+</html>
