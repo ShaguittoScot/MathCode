@@ -1,0 +1,131 @@
+
+.titulo{
+    text-align: center;
+}
+
+
+.bton:hover {
+    background-color: #6190cd;
+}
+
+.correcto{
+    /*background-color: #36c9c6;*/
+    border: 1px solid green;
+}
+.error{
+    background-color: #ff7332b1;
+    border: 1px solid red;
+    color: black;
+}
+.circleCrossNombre, .circleCrossCelular, .circleCrossCorreo,.circleCrossContrasena{
+    margin-left: 5px;
+    color: red;
+}
+.ocultar{
+    display: none;
+    visibility: hidden;
+}
+.mensajeNombre, .mensajeCelular, .mensajeCorreo,.mensajeContrasena{
+    color: red;
+    font-size: small;
+}
+.circleCheckNombre, .circleCheckCelular, .circleCheckCorreo, .circleCheckContrasena{
+    color: rgb(68, 207, 196);
+}
+.qu{
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+    margin-top: 50px;
+}
+
+
+/* Aplica estos estilos a ambos formularios */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8; /* Color de fondo para mejorar el contraste */
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el formulario */
+    align-items: center; /* Centra verticalmente el formulario */
+    height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+    padding: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente los elementos hijos */
+    width: 100%;
+    max-width: 400px; /* Limita el ancho máximo del formulario */
+    padding: 30px;
+    box-shadow: 0 0 20px #293241;
+    border-radius: 7px;
+    background-color: #fff; /* Fondo blanco para el formulario */
+}
+
+.form-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.input-container {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px;
+    background-color: #dffbfc;
+    outline-color: #3d5b81;
+    font-size: 14px;
+    color: #333; /* Color de texto */
+}
+
+button.submit {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #3d5b81;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* Cambia el cursor a mano para el botón */
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+button.submit:hover {
+    background-color: #6190cd;
+}
+
+.signup-link {
+    margin-top: 20px;
+    text-align: center; /* Centra el texto */
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #3d5b81;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.input-container-login{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

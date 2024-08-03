@@ -1,32 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
-
+<%- include("encabezado") %>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crea una cuenta</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>Inicia sesión 
+    </title>
+    <link rel="stylesheet" href="/css/estilosfor.css">
 </head>
 
-<body>
-  <form class="form">
-    <p class="form-title">Inicia sesion en tu cuenta</p>
-     <div class="input-container">
-       <input type="email" placeholder="Ingresa tu correo electronico">
-       <span>
-       </span>
-   </div>
-   <div class="input-container">
-       <input type="password" placeholder="Ingresa tu contraseña">
-     </div>
-      <button type="submit" class="submit">
-        Iniciar sesión
-   </button>
 
-   <p class="signup-link">
-     ¿Aún no tienes cuenta?
-     <a href="registrer.ejs">Regístrate Aquí</a>
-   </p>
-</form>
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg" id="navbar">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="#" id="logo"><img src="/images/logo.png" alt=""></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <input type="checkbox" id="checkbox" class="d-none">
+      <label for="checkbox" class="toggle">
+        <div class="bars" id="bar1"></div>
+        <div class="bars" id="bar2"></div>
+        <div class="bars" id="bar3"></div>
+      </label>
+    </button>
+
+    <div class="collapse navbar-collapse center-navbar" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" >
+          <a class="nav-link" href="/about">Inico</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about-section">Acerca de</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/calculadora">Calculadora</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#gallary">Galería</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- navbar -->
+
+
+<body>
+  <div class="form-container">
+    <form class="form" action="/login" method="POST">
+      <p class="form-title" style="font-size: 30px;">Inicia sesión en tu <span style="color: #0e4a8c;">cuenta</span> </p>
+      <div class="input-container input-container-login">
+        <input type="email" name="correo" placeholder="Ingresa tu correo electrónico" required>
+      </div>
+      <div class="input-container input-container-login">
+        <input type="password" name="contrasena" placeholder="Ingresa tu contraseña" required>
+      </div>
+      <button type="submit" class="submit">Iniciar sesión</button>
+      <p class="signup-link">
+        ¿Aún no tienes cuenta?
+        <a href="/agregarUsuario">Regístrate Aquí</a>
+      </p>
+    </form>
+  </div>
+  <%- include("pie") %>
 </body>
 </html>

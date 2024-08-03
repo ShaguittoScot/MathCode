@@ -1,122 +1,206 @@
 <!-- views/about.ejs -->
 <%- include("encabezado") %>
+<head>
+  <title>Calculadora multifuncional</title></head>
 
 <body>
   <div class="all-content">
+   
+   
     <!-- navbar -->
-    <%- include("navbar") %>
+    <nav class="navbar navbar-expand-lg" id="navbar">
+      <div class="container-fluid">
+
+        <a class="navbar-brand" href="#" id="logo"><img src="/images/logo.png" alt=""></a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <input type="checkbox" id="checkbox" class="d-none">
+          <label for="checkbox" class="toggle">
+            <div class="bars" id="bar1"></div>
+            <div class="bars" id="bar2"></div>
+            <div class="bars" id="bar3"></div>
+          </label>
+        </button>
+        
+        <div class="collapse navbar-collapse center-navbar" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+              <a class="nav-link" href="#about-section">Acerca de</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#gallary">Galería</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/calculadora">Calculadora</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <!-- navbar -->
 
     <!-- seccion principal -->
     <section id="home">
       <div class="content">
         <h3>CALCULADORA MULTIFUNCIONAL <br> DE FIGURAS GEOMETRICAS </h3>
-        <a href="/calculadora">
-          <button id="btn">Calcular ahora</button>
-        </a>
+        <a class="button" href="/calculadora">
+          <span class="button__icon-wrapper">
+              <svg width="10" class="button__icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 15">
+                  <path fill="currentColor" d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"></path>
+              </svg>
+              
+              <svg class="button__icon-svg  button__icon-svg--copy" xmlns="http://www.w3.org/2000/svg" width="10" fill="none" viewBox="0 0 14 15">
+                  <path fill="currentColor" d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"></path>
+              </svg>
+          </span>
+          Calcula Ahora
+      </a>
       </div>
     </section>
     <!-- seccion principal -->
 
     <!-- acerca de la seccion -->
-    <div class="about" id="about">
-      <div class="container">
-        <div class="heading"><h1>Sobre<span> Nosotros</span></h1></div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card">
-              <img src="/images/about.png" alt="">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <h3>¿Cuál es nuestro objetivo en MathCode?</h3>
-            <p>Atender a las necesides de los alumnos en relación a las dificultades y adversidades que experimentan al 
-              momento de calcular un proceso matemático concreto de índole geométrico, es esencial y propio de nuestra 
-              marca como empresa, por lo que nuestro público objetivo son personas que están dentro del ámbito educativo 
-              ya sean profesores o alumnos. 
-              <br><br> Nuestra calculadora de cálculo de áreas para figuras geométricas se enfoca en simplicidad,
-               precisión  y rentabilidad, cuyo funcionamiento y estructura proporciona a los usuarios una herramienta eficaz 
-               y fácil de usar para determinar áreas geometricas con rapidez.
-            </p>
-          </div>
-        </div>
+
+<div id="about-section">
+  <div id="about-heading">
+    <h1>Sobre<span> Nosotros</span></h1>
+  </div>
+  <div id="about-container">
+    <div id="about-column">
+      <div id="about-card">
+        <img src="/images/logo.svg" alt="">
       </div>
     </div>
+    
+    <div id="about-column">
+      <h3>¿Cuál es nuestro objetivo en MathCode?</h3>
+      <p id="about-paragraph">Atender a las necesides de los alumnos en relación a las dificultades y adversidades que experimentan al 
+        momento de calcular un proceso matemático concreto de índole geométrico, es esencial y propio de nuestra 
+        marca como empresa, por lo que nuestro público objetivo son personas que están dentro del ámbito educativo 
+        ya sean profesores o alumnos. 
+        <br><br> Nuestra calculadora de cálculo de áreas para figuras geométricas se enfoca en simplicidad,
+         precisión  y rentabilidad, cuyo funcionamiento y estructura proporciona a los usuarios una herramienta eficaz 
+         y fácil de usar para determinar áreas geometricas con rapidez.
+      </p>
+    </div>
+  </div>
+</div>
     <!-- sobre la seccion -->
 
     <!-- nuestra galeria -->
-    <div class="container" id="gallary">
-      <h1>Nuestra <span>Galería</span></h1>
-      <div class="row" style="margin-top: 30px;">
-        <div class="col-md-4 py-3 py-md-0">
-          <div class="card">
-            <img src="/images/image1.png" alt="">
-          </div>
-        </div>
-        <div class="col-md-4 py-3 py-md-0">
-          <div class="card">
-            <img src="/images/image2.png" alt="">
-          </div>
-        </div>
-        <div class="col-md-4 py-3 py-md-0">
-          <div class="card">
-            <img src="/images/image3.png" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="row" style="margin-top: 30px;">
-        <div class="col-md-4 py-3 py-md-0">
-          <div class="card">
-            <img src="/images/image4.png" alt="">
-          </div>
-        </div>
-        <div class="col-md-4 py-3 py-md-0">
-          <div class="card">
-            <img src="/images/image5.png" alt="">
-          </div>
-        </div>
-        <div class="col-md-4 py-3 py-md-0">
-          <div class="card">
-            <img src="/images/image6.png" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- nuestra galeria -->
-
-    <!-- contacto -->
-    <section class="contact" id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7">
-            <div class="heading6">Contactate con <span>Nosotros</span></div>
-            <p>Si tienes alguna duda sobre nuestro objetivo, nuestras politicas o alguna sugerencia que quieras enviarnos.
-              <br>No dudes en ponerte en contacto con nosotros.
-            </p>
-            <input class="form-control" type="text" placeholder="Nombre" aria-label="default input example"><br>
-            <input class="form-control" type="email" placeholder="Email" aria-label="default input example"><br>
-            <input class="form-control" type="number" placeholder="Numero" aria-label="default input example"><br>
-            <button id="contact-btn">Enviar datos</button>
-          </div>
-          <div class="col-md-5" id="col">
-            <h1>Información</h1>
-            <p><i class="fa-regular fa-envelope"></i> clientsupport@mathcode.mx</p>
-            <p><i class="fa-solid fa-phone"></i> +52 477 5567 9212</p>
-            <p><i class="fa-solid fa-building-columns"></i> SEDE: Mexico, Nuevo Leon, Colonia Chapitos #21</p>
-            <p>Por debajo de las oficinas del banco. Dirigerse hacia el fondo.</p>
-          </div>
-        </div>
+<div class="container" id="gallary">
+  <div class="gallery-header">
+    <h1>Nuestra <span>Galería</span></h1>
+  </div>
+  <div class="gallery-cards">
+    <section id="card1" class="card">
+      <img src="/images/image1.png" alt="">
+      <div class="card__content">
+        <p class="card__description">
+          PROXIMAMENTE
+        </p>
       </div>
     </section>
-    <!-- contacto -->
+
+    <section id="card2" class="card">
+      <img src="/images/image2.png" alt="">
+      <div class="card__content">
+        <p class="card__description">
+          PROXIMAMENTE
+        </p>
+      </div>
+    </section>
+
+    <section id="card3" class="card">
+      <img src="/images/image3.png" alt="">
+      <div class="card__content">
+        <p class="card__description">
+          PROXIMAMENTE
+        </p>
+      </div>
+    </section>
+
+    <section id="card4" class="card">
+      <img src="/images/image4.png" alt="">
+      <div class="card__content">
+        <p class="card__description">
+          PROXIMAMENTE
+        </p>
+      </div>
+    </section>
+
+    <section id="card5" class="card">
+      <img src="/images/image5.png" alt="">
+      <div class="card__content">
+        <p class="card__description">
+          PROXIMAMENTE
+        </p>
+      </div>
+    </section>
+
+    <section id="card6" class="card">
+      <img src="/images/image6.png" alt="">
+      <div class="card__content">
+        <p class="card__description">
+          PROXIMAMENTE
+        </p>
+      </div>
+    </section>
+  </div>
+</div>
+<!-- nuestra galeria -->
+
+
+<!-- contacto -->
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+      <!-- Tarjeta de formulario -->
+      <div class="contact-card-form col-md-6">
+        <form class="contact-form">
+          <div class="contact-form-title"><h1>Contáctate con <span> Nosotros</span><h/1></div>
+          <p class="contact-form-description">Si tienes alguna duda sobre nuestro objetivo, nuestras políticas o alguna sugerencia que quieras enviarnos.
+            <br><br>¡No dudes en ponerte en contacto con nosotros!
+          </p>
+          <input class="contact-form-input" type="text" placeholder="Nombre" aria-label="default input example">
+          <input class="contact-form-input" type="email" placeholder="Email" aria-label="default input example">
+          <textarea class="contact-form-textarea" placeholder="Tu mensaje"></textarea>
+           <button class="contact-form-button" type="submit">
+              <div class="svg-wrapper-1">
+                <div class="svg-wrapper">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                      fill="currentColor"
+                      d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <span style="color: white;">Enviar</span>
+            </button>
+        </form>
+      </div>
+      </div>
+  </div>
+</section>
+<!-- contacto -->
+
+
+
+
 
     <!-- pie -->
     <%- include("pie") %>
     <!-- pie -->
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="/public/js/script.js" ></script>
-  <script src="/public/js/data.js" ></script>
-  <script src="/public/js/carro.js" ></script>
 </body>
 </html>

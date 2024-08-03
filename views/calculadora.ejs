@@ -1,60 +1,171 @@
 <!-- views/calculadora.ejs -->
 
-  <%- include("encabezado") %>
-  
-  <!-- navbar -->
-  <%- include("navbar") %>
-   <!-- navbar -->
-  <div class="container">
-      <!--Cuadro para ingresar datos --> 
-      <form id="calculator">
-          <label for="shape"><h1>Selecciona una figura:</h1></label>
-          <select id="shape" name="shape" onchange="showFields()">
-              <option value="square">Cuadrado</option>
-              <option value="rectangle">Rectángulo</option>
-              <option value="triangle">Triángulo</option>
-              <option value="circle">Círculo</option>
-          </select>
-          <div id="squareFields" class="fields active">
-              <label for="squareSide">Lado:</label>
-              <input type="number" id="squareSide" name="squareSide" required>
-          </div>
-          <div id="rectangleFields" class="fields">
-              <label for="rectangleLength">Longitud:</label>
-              <input type="number" id="rectangleLength" name="rectangleLength" required>
-              <label for="rectangleWidth">Ancho:</label>
-              <input type="number" id="rectangleWidth" name="rectangleWidth" required>
-          </div>
-          <div id="triangleFields" class="fields">
-              <label for="triangleLado1">Lado 1:</label>
-              <input type="number" id="triangleLado1" name="triangleLado1" required>
-              <label for="triangleLado2">Lado 2:</label>
-              <input type="number" id="triangleLado2" name="triangleLado2" required>
-              <label for="triangleLado3">Lado 3:</label>
-              <input type="number" id="triangleLado3" name="triangleLado3" required>
-          </div>
-          <div id="circleFields" class="fields">
-              <label for="circleRadius">Radio:</label>
-              <input type="number" id="circleRadius" name="circleRadius" required>
-          </div>
-          <button type="button" onclick="calculate()">Calcular</button>
-      </form>
-  </div>
+<%- include("encabezado") %>
 
-  <!--Cuadro de resultados -->
-  <div class="content-center">
-    <div class="result">
-      <label for="label"><h1>Resultados:</h1></label>
-      
-      <p>Área: <span id="areaResult"></span></p>
-      <p>Perímetro: <span id="perimeterResult"></span></p>
-    </div>
-  </div>
+  <head>
+    <title>Calculadora multifuncional</title>
+    <link rel="stylesheet" href="css/estilosTabla.css">
+  </head>
 
-  <!--Pie -->
-  <%- include("pie") %>
-  <!--Pie-->
+  <body>
+    <div class="all-content">
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container-fluid">
 
-  <script src="/public/js/script.js"></script>
-</body>
-</html>
+          <a class="navbar-brand" href="#" id="logo"><img src="/images/logo.png" alt=""></a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <input type="checkbox" id="checkbox" class="d-none">
+            <label for="checkbox" class="toggle">
+              <div class="bars" id="bar1"></div>
+              <div class="bars" id="bar2"></div>
+              <div class="bars" id="bar3"></div>
+            </label>
+          </button>
+
+          <div class="collapse navbar-collapse center-navbar" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/about">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about-section">Acerca de</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/calculadora">Calculadora</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#gallary">Galería</a>
+              </li>
+              <li class="nav-item">
+                <form action="/cerrarSesion" method="get" style="display: inline;">
+                  <button type="submit" class="nav-link cerrar-sesion"
+                    style="background: none; border: none; cursor: pointer;">
+                    Salir
+                  </button>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- navbar -->
+
+      <div class="container2">
+        <div class="gallery-header">
+          <h1 style="font-size: 35px">Calculadora de <span>Figuras geometricas</span></h1>
+        </div>
+        <div class="calculator-container">
+
+          <!-- Cuadro para ingresar datos -->
+          <div class="form-container">
+            <form id="calculator-form" class="calculator-form">
+              <label for="shape" class="form-label">
+                <h1 style="font-size: 30px">Selecciona una <span>figura:</span></h1>
+              </label>
+              <select id="shape" name="shape" class="form-select" onchange="showFields()">
+                <option value=" "> </option>
+                <option value="square">Cuadrado</option>
+                <option value="rectangle">Rectángulo</option>
+                <option value="triangle">Triángulo</option>
+                <option value="circle">Círculo</option>
+              </select>
+
+              <div id="squareFields" class="shape-fields">
+                <label for="squareSide" class="field-label">Lado:</label>
+                <input type="number" id="squareSide" name="squareSide" class="field-input" required>
+              </div>
+              <div id="rectangleFields" class="shape-fields">
+                <label for="rectangleLength" class="field-label">Longitud:</label>
+                <input type="number" id="rectangleLength" name="rectangleLength" class="field-input" required>
+                <label for="rectangleWidth" class="field-label">Ancho:</label>
+                <input type="number" id="rectangleWidth" name="rectangleWidth" class="field-input" required>
+              </div>
+              <div id="triangleFields" class="shape-fields">
+                <label for="triangleLado1" class="field-label">Lado 1:</label>
+                <input type="number" id="triangleLado1" name="triangleLado1" class="field-input" required>
+                <label for="triangleLado2" class="field-label">Lado 2:</label>
+                <input type="number" id="triangleLado2" name="triangleLado2" class="field-input" required>
+                <label for="triangleLado3" class="field-label">Lado 3:</label>
+                <input type="number" id="triangleLado3" name="triangleLado3" class="field-input" required>
+              </div>
+              <div id="circleFields" class="shape-fields">
+                <label for="circleRadius" class="field-label">Radio:</label>
+                <input type="number" id="circleRadius" name="circleRadius" class="field-input" required>
+              </div>
+              <div class="container-button">
+                <button type="button" class="submit-button" onclick="calculate()">Calcular</button>
+              </div>
+            </form>
+          </div>
+
+
+          <!-- Cuadro de resultados -->
+          <div class="result-container">
+            <div class="result-box">
+              <label for="label" class="result-label">
+                <h1>Resultados:</h1>
+              </label>
+              <p>Área: <span id="areaResult" class="result-value"></span></p>
+              <p>Perímetro: <span id="perimeterResult" class="result-value"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <h1 style="font-size: 35px">Historial de <span>Calculos</span></h1>
+        <div class="contenedor">
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo De Figura</th>
+                <th>Datos</th>
+                <th>Area</th>
+                <th>Perimetro</th>
+                <th>Fecha</th>
+                <th>Borrar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% historialCorrectos.forEach((calculo)=> { %>
+                <tr>
+                  <td>
+                    <%= calculo.tipo_figura %>
+                  </td>
+                  <td>
+                    <%= calculo.datos %>
+                  </td>
+                  <td>
+                    <%= calculo.area %>
+                  </td>
+                  <td>
+                    <%= calculo.perimetro %>
+                  </td>
+                  <td>
+                    <%= calculo.fecha %>
+                  </td>
+                  <td>
+                    <a href="/borrar/<%= calculo.id %>" >
+                    <img src="/images/delete-svgrepo-com.svg" alt="Borrar" style="width: 24px; height: 24px;"/>
+                    </a>
+                  </td>
+                </tr>
+                <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+        <!--Pie -->
+        <%- include("pie") %>
+          <!--Pie-->
+      </div>
+      <script src="/js/script.js"></script>
+  </body>
+
+  </html>
