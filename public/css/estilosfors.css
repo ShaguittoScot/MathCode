@@ -129,3 +129,66 @@ button.submit:hover {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+
+/*Estilosformulario*/
+.table-container {
+    overflow-x: auto; /* Permite el desplazamiento horizontal en pantallas pequeñas */
+    margin: 20px; /* Ajusta el margen alrededor del contenedor */
+    margin-bottom: 100px; /* Añade margen en la parte inferior */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #333333; /* Color de borde oscuro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra más fuerte para una mejor separación */
+    background-color: #1e1e1e; /* Fondo oscuro para la tabla */
+}
+
+th, td {
+    padding: 12px; /* Padding para mejor lectura */
+    text-align: center;
+    border: 2px solid #333333; /* Color de borde oscuro */
+    border-radius: 8px; /* Esquinas redondeadas para las celdas */
+    color: #e0e0e0; /* Texto claro en las celdas */
+}
+
+th {
+    background-color: #2c2c2c; /* Fondo de encabezados gris oscuro */
+    color: #ffffff; /* Texto blanco en encabezados */
+    font-weight: bold; /* Negrita en encabezados */
+}
+
+tr:nth-child(odd) {
+    background-color: #2c2c2c; /* Color de fondo de las filas impares */
+}
+
+tr:nth-child(even) {
+    background-color: #1e1e1e; /* Color de fondo de las filas pares */
+}
+
+tr:hover {
+    background-color: #444444; /* Color de fondo cuando se pasa el cursor sobre una fila */
+    transition: 0.5s ease-out;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Asegura que el contenedor se ajuste verticalmente */
+    margin-bottom: 20px; /* Añade margen en la parte inferior del contenedor */
+}
+
+.descripcion {
+    width: auto; /* Ajusta el ancho de la descripción automáticamente */
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em; /* Ajusta el tamaño del texto del título */
+    margin: 20px 0;
+    color: #000000; /* Texto claro para el título */
+}
+/*Estilos Form*/

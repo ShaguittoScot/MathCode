@@ -12,6 +12,7 @@ const secret = process.env.SECRET_KEY;
 router.get('/agregarUsuario', (req, res) => {
     res.render('registrer');
   });
+
 // Agregar un nuevo usuario
 router.post('/agregarUsuario', async (req, res) => {
     try {
@@ -22,7 +23,7 @@ router.post('/agregarUsuario', async (req, res) => {
         if (usuario1.nombre && usuario1.correo && usuario1.contrasena) {
             const usuariobd = new UsuarioBD();
             const nuevoUsuarioId = await usuariobd.nuevoUsuario(usuario1.mostrarDatos);
-            usuario1.id = nuevoUsuarioId;            
+            usuario1.id = nuevoUsuarioId; // Obtiene el id del usuario y lo agrega a la clase usuario           
             // Crear un token JWT
             const token = jwt.sign(
                 { id: usuario1.id, nombre: usuario1.nombre, correo: usuario1.correo },
@@ -86,7 +87,6 @@ router.post('/login', async (req, res) => {
 //  Ruta para manejar el cierre de sesión, que eliminará el token de la cookie.
 
 router.get('/cerrarSesion', (req, res) => {
-    // Aquí puedes manejar el cierre de sesión
     // Por ejemplo, eliminar el token de la cookie
     res.clearCookie('token'); // Nombre de la cookie que almacena el token
     res.redirect('/'); // Redirige al usuario a la página principal o de inicio de sesión
@@ -108,8 +108,7 @@ ruta.get('/', async (req, res) => {
     }
 }); */
 
-
-
+/*
 // Mostrar formulario para editar usuario
 router.get('/editarUsuario/:idUsuario', async (req, res) => {
     try {
@@ -144,6 +143,6 @@ router.get('/borrarUsuario/:id', async (req, res) => {
         console.error('Error al borrar el usuario:', error);
         res.render('error', { mensaje: 'Error al borrar el usuario' });
     }
-});
+}); */
 
 module.exports = router;
