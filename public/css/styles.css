@@ -893,7 +893,7 @@ html {
 }
 
 /* Contenedor del formulario */
-.form-container {
+.input-container {
   display: flex;
   width: 100%;
   justify-content: center;
